@@ -11,7 +11,15 @@
     ]
 
     const route = useRoute()
-    const isActive = (path) => route.path === path
+    
+    const isActive = (item) => {
+        if (item.to === '/') {
+            // `route.path` がどの `to` にも一致しない、または "/" の場合に `Home` を強調
+            return !items.some(i => i.to === route.path) || route.path === '/';
+        }
+        // 通常の一致チェック
+        return item.to === route.path;
+    };
 
 </script>
 <template>
@@ -26,7 +34,7 @@
                             :key="i"
                             :to="item.to"
                             class="mx-2 text-body-1 text-decoration-none"
-                            :class="isActive(item.to) ? `text-blue` : `text-grey-darken-4`"
+                            :class="isActive(item) ? `text-blue` : `text-grey-darken-4`"
                         >
                             {{ item.text }}
                         </NuxtLink>

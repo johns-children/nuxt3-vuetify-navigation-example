@@ -1,37 +1,36 @@
 <script setup>
+    definePageMeta({
+        path: "/:id?",
+        keepalive: true,
+    });
+
     const drawer = ref(true)
 
     const items = ref([
         {
-            title: 'Dashboard',
-            prependIcon: 'mdi-view-dashboard-outline',
-            link: true,
+            text: 'Dashboard',
+            icon: 'mdi-view-dashboard-outline',
+            to: '/dashboard',
         },
         {
-            title: 'Team',
-            prependIcon: 'mdi-account-group',
-            link: true,
+            text: 'Team',
+            icon: 'mdi-account-group',
+            to: `/team`,
         },
         {
-            title: 'Projects',
-            prependIcon: 'mdi-briefcase-outline',
-            link: true,
-        },
-        {
-            title: 'Calendar',
-            prependIcon: 'mdi-calendar',
-            link: true,
-        },
-        {
-            title: 'Reports',
-            prependIcon: 'mdi-file-chart-outline',
-            link: true,
+            text: 'Projects',
+            icon: 'mdi-briefcase-outline',
+            to: '/projects',
         },
     ]);
 
     function controlDrawer(drawerStatus) {
         drawer.value = drawerStatus;
     }
+
+    const route = useRoute();
+    const isActive = (path) => route.path === path
+
 
 </script>
 
@@ -45,7 +44,16 @@
                 <div class="pa-2">
                     <v-btn icon="$vuetify" density="comfortable" variant="text" @click="controlDrawer(false)" />
                 </div>
-                <v-list density="compact" item-props :items="items" nav />
+                <v-list density="compact" item-props nav >
+                    <v-list-item
+                        v-for="(item, i) in items"
+                        :key="i"
+                        :to="item.to"
+                        :active="isActive(item.to)"
+                    >
+                        {{ item.text }}
+                    </v-list-item>
+                </v-list>
             </v-navigation-drawer>
             <v-main>
                 <v-sheet>
