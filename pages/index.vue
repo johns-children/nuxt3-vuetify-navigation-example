@@ -60,7 +60,9 @@
                     <div class="pa-2" style="height: 64px">
                         <v-btn v-show="!drawer" icon="$vuetify" density="comfortable" variant="text" @click="controlDrawer(true)" />
                     </div>
-                    <div>main main main</div>
+                    <v-card class="mx-3 pa-3">
+                        route: {{ route.path }}
+                    </v-card>
                 </v-sheet>
             </v-main>
         </v-layout>
