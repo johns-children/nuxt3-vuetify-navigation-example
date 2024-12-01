@@ -1,12 +1,12 @@
 <script setup>
     const items = [
         {
-        text: 'Home',
-        to: '/',
+            text: 'Home',
+            to: '/',
         },
         {
-        text: 'Test',
-        to: '/test',
+            text: 'Test',
+            to: '/test',
         }
     ]
 

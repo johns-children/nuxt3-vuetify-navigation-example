@@ -42,7 +42,7 @@
                 permanent
             >
                 <div class="pa-2">
-                    <v-btn icon="$vuetify" density="comfortable" variant="text" @click="controlDrawer(false)" />
+                    <v-btn icon="mdi-page-layout-sidebar-left" density="comfortable" variant="text" @click="controlDrawer(false)" />
                 </div>
                 <v-list density="compact" item-props nav >
                     <v-list-item
@@ -58,7 +58,7 @@
             <v-main>
                 <v-sheet>
                     <div class="pa-2" style="height: 64px">
-                        <v-btn v-show="!drawer" icon="$vuetify" density="comfortable" variant="text" @click="controlDrawer(true)" />
+                        <v-btn v-show="!drawer" icon="mdi-page-layout-sidebar-left" density="comfortable" variant="text" @click="controlDrawer(true)" />
                     </div>
                     <v-card class="mx-3 pa-3">
                         route: {{ route.path }}
