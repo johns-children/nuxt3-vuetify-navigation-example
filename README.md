@@ -1,6 +1,40 @@
-# Overview
+# 概要
 
-Nuxt3 で Vuetify を使ったときの Navigation 勉強用プロジェクト。
+Nuxt3 で Vuetify を使ってナビゲーションバーを実装するサンプルリポジトリです。
+
+![application screenshot](./public/readme_application_screenshot.png)
+
+主な特徴
+- Nuxt の layouts を利用して、リンクを配置したナビゲーションバーを実装している。
+- あるページにナビゲーションドロワーを設置し、その中でのページ遷移を実装している。
+- Vuetify を利用している。
+
+# サンプル
+
+https://stackblitz.com/~/github.com/johns-children/nuxt3-vuetify-navigation-example
+
+# 使用技術
+
+- Nuxt3
+- Vue3
+- Vuetify
+
+# ディレクトリ構造
+
+Nuxt3 のシステムに従っています。https://nuxt.com/docs/guide/directory-structure/app
+
+## `/pages`
+
+1. `index.vue`
+  - Home ページです。ナビゲーションドロワーとコンテンツがある。
+2. `text.vue`
+  - 適当なテストページ。
+
+## `/layouts`
+1. `default.vue`
+  - ナビゲーションバーとコンテンツがある。
+
+---
 
 # Nuxt 3 Minimal Starter
 
